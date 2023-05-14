@@ -1,0 +1,23 @@
+$number-color-list: [#0000ff, #008000, #c50000, #000080, #800000, #008080, #000, #808080];
+
+body {
+    background-color: #20232d;
+}
+
+#game-area > table > tr > td {
+    border-color: #1b1066;
+    
+    & > button {
+        background-color: #8491cc;
+    }
+    
+    & > button.open {
+        background-color: #b5b5b5;
+    }
+
+    @for $i from 1 through length($number-color-list) {
+        & > button[data-number="#{$i}"] {
+            color: nth($number-color-list, $i);
+        }
+    }
+}
